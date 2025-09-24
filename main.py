@@ -32,13 +32,13 @@ def main():
         screen.fill(000)
         for thing in drawable:
             thing.draw(screen)
-            other_things = []
-            other_things = drawable
-#            print(other_things)
-#            other_things.pop(thing)
-#            for other_thing in other_things:
-#                if thing.col_det(other_thing) == True:
-#                    print("END GAME")
+
+            for asteroid in asteroids:
+                collision_check = asteroid.col_det(player_no_1)
+                if collision_check == True:
+                    print("Game Over!")
+                    raise SystemExit()
+
         pygame.display.flip()
 
         dt =  game_clock.tick(60)/1000

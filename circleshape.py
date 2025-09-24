@@ -21,13 +21,14 @@ class CircleShape(pygame.sprite.Sprite):
         # sub-classes must override
         pass
 
-    def col_det(self, other_circle):
-        distance = pygame.math.Vector2.distance_to(self.position, other_circle.position)
-        size = self.radius + other_circle.radius
+    def col_det(self, position_2):
+        distance = pygame.math.Vector2.distance_to(self.position, position_2.position)
+        size = self.radius + position_2.radius
+#        print (f"The size is {size}, distance is {distance}")
         if distance <= size:
-            True
+            return(True)
         else:
-            False
+            return(False)
 
 
         
