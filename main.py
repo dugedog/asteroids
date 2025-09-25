@@ -43,7 +43,7 @@ def main():
                 for bullet in bullets:
                     if asteroid.col_det(bullet) == True:
                         bullet.kill()
-                        asteroid.kill()
+                        asteroid.split()
 
         pygame.display.flip()
 
